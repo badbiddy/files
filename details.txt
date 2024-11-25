@@ -1,0 +1,3 @@
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("INPUT-FILE-PATH")) | Out-File -Encoding ASCII OUTPUT-FILE-PATH
+
+$s = Get-Content -Path 'BASE64-INPUT-PATH; [System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String($s)) | IEX; Invoke-FILE 
